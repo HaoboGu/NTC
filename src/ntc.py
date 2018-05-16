@@ -3,7 +3,6 @@
 """
 import os
 import re
-import nltk
 import string
 from operator import itemgetter
 
@@ -151,7 +150,7 @@ class RuleBasedModel:
         :param text: str
         :return: str
         """
-        word_seq = nltk.word_tokenize(text)
+        word_seq = text.split(' ')
         for word in word_seq:
             word = re.sub('^\W+$', '', word)
             if word not in self.vocabulary and word.lower() not in self.vocabulary and word != ''\
@@ -216,6 +215,18 @@ class RuleBasedModel:
                     print(first_word + ' ' + second_word, '->', merged_word)
         return text
 
+    def correct_case(self, text):
+        """
+        If a word starts with a character in lower case, then lower the entire word
+        :param text: str
+        :return: str
+        """
+        word_seq = text.split(' ')
+        for word in word_seq:
+            if word[0].islower():
+                text = text.replace(word, word.lower())
+        return text
+
     def process(self, text):
         # main method to process noisy text
 
@@ -223,7 +234,7 @@ class RuleBasedModel:
         text = self.merge_words(text)
         text = self.remove_garbage_strings(text)
         text = self.new_apply_char_rule(text)
-
+        text = self.correct_case(text)
         return text
 
 

@@ -311,7 +311,7 @@ def modify_line(statistic_model, input_line):
     words = splitstr(input_line, split_strategy)
     line_candidate = []
     for word in words:
-        if not need_modify(word, unigram, possible_name_entity_dict, 3):
+        if not need_modify(word, unigram, possible_name_entity_dict, 2):
         # if word in unigram:
             line_candidate.append([(word, 1)])
         else:

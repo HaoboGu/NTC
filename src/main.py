@@ -4,7 +4,6 @@ import src.ntc as ntc
 import src.ngram as ng
 import re
 import os
-import nltk
 
 if __name__ == "__main__":
 
@@ -35,7 +34,7 @@ if __name__ == "__main__":
     # Statistical system
     print("Statistical ...")
     # ng.ngrammodel(data_path, model_path, modern_corpus=True)
-    statistic_model = ng.read_ngram_model(model_path, ng.TOKENIZER,
+    statistic_model = ng.read_ngram_model(model_path, ng.WHITE_SPACE,
                                           topN=50, delta=0.1, threshold=1.7, NE_list=possible_name_entity_dict)
     new_result = []
 
@@ -58,8 +57,8 @@ if __name__ == "__main__":
     gold = reader.clean_empty_line(gold)
     gold = reader.lines2string(gold)
 
-    # print('WER in raw text:', evaluation.evaluate(data, gold))
-    print('WER after rule-based system:', evaluation.evaluate(result, gold, False))
-    # print('WER after rule-based and statistical system:', evaluation.evaluate(new_result, gold))
+    print('WER in raw text:', evaluation.evaluate(data, gold))
+    print('WER after rule-based system:', evaluation.evaluate(result, gold))
+    print('WER after rule-based and statistical system:', evaluation.evaluate(new_result, gold))
 
 
