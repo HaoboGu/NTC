@@ -60,6 +60,8 @@ def writefile(unigram, bigram, path):
     :param bigram: a dictionary of count of bigram
     :param path: the path to store the two output file
     '''
+    if not os.path.exists(path):
+        os.mkdir(path)
     uni_file = open(os.path.join(path, "unigram"), 'w')
     bi_file = open(os.path.join(path, "bigram"), 'w')
 
@@ -120,7 +122,6 @@ def splitstr(line, split_strategy):
     :param split_strategy: a way to split the string
     :return: a list of fragments
     '''
-    items = []
     if split_strategy == TOKENIZER:
         ''' Use nltk tokenizer to split lines'''
         items = nltk.tokenize.word_tokenize(line)
@@ -179,13 +180,13 @@ def read_bigram_file(file_path):
     return bigram
 
 
-def ngrammodel(data_path, output_path):
+def ngrammodel(data_path, model_path, modern_corpus=False):
     '''
     Given a data directory and output directory, generate files that store the count of unigrams and bigrams
     :param data_path: the directory of training data
     :param output_path: the directory to store counting data
     '''
-    history_corpus = "local/"
+    history_corpus = "historical_corpus/"
     modern_corpus = "other_corpus/"
     all_files = []
     unigramdict = {}
@@ -199,13 +200,11 @@ def ngrammodel(data_path, output_path):
             continue
         count_appearance(contentlist, unigramdict, bigramdict, TOKENIZER)
 
-    other_corpus = True
-    if other_corpus:
+    if modern_corpus:
         read_modern_corpus(data_path + modern_corpus, unigramdict, bigramdict)
 
-    writefile(unigramdict, bigramdict, output_path)
-    total_tokens = sum(unigramdict.values())
-    return unigramdict, bigramdict, total_tokens
+    writefile(unigramdict, bigramdict, model_path)
+    return
 
 
 def read_modern_corpus(data_path, unigram, bigram):
@@ -549,20 +548,3 @@ def find_biggest(items):
             cost = curr_cost
             index = i
     return index, cost
-
-
-if __name__ == "__main__":
-
-    data_path = "../data/"
-    history_corpus = "historical_corpus/"
-    modern_corpus = "other_corpus/"
-    model_path = "../output/"
-    unigram, bigram, total_tokens = ngrammodel(data_path, model_path)
-
-    text_path = "../data/OCR_text/newberry-mary-b-some-further-accounts-of-the-nile-1912-1913.txt"
-    train_file = open(text_path, 'r')
-    new_line = []
-    for line in train_file.readlines():
-        if re.match("\\s+", line):
-            continue
-        new_line.append(modify_line(unigram, bigram, line, total_tokens, TOKENIZER, 10, 1))

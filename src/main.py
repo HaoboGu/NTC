@@ -11,16 +11,16 @@ if __name__ == "__main__":
     if 'output' in os.listdir('.'):
         data_path = './data/'
         output_path = "./output/"
-        n_gram_data_path = "./data/corpus/"
+        model_path = "./model/"
     else:
         data_path = '../data/'
         output_path = "../output/"
-        n_gram_data_path = "../data/corpus/"
+        model_path = "../model/"
     raw_text_file = "OCR_text/newberry-mary-b-some-further-accounts-of-the-nile-1912-1913/NMB_2.txt"
     gold_text_file = "gold_standard/newberry-mary-b-some-further-accounts-of-the-nile-1912-1913/ESF_2.txt"
 
     all_raw_text_files, all_gold_standard_files = reader.get_all_evaluation_files()
-    possible_name_entity_dict = ng.get_possible_NE_list(all_raw_text_files)
+    possible_name_entity_dict = ng.get_possible_NE_list([data_path+raw_text_file])
     # Read data
     data = reader.read_file(data_path + raw_text_file)
     data = reader.clean_empty_line(data)
@@ -34,8 +34,9 @@ if __name__ == "__main__":
 
     # Statistical system
     print("Statistical ...")
-    # unigram, bigram, total_tokens = ng.ngrammodel(n_gram_data_path, output_path)
-    statistic_model = ng.read_ngram_model(output_path, ng.TOKENIZER, 50, 0.1, 1.7, possible_name_entity_dict)
+    # ng.ngrammodel(data_path, model_path, modern_corpus=True)
+    statistic_model = ng.read_ngram_model(model_path, ng.TOKENIZER,
+                                          topN=50, delta=0.1, threshold=1.7, NE_list=possible_name_entity_dict)
     new_result = []
 
     for line in result:
@@ -46,7 +47,7 @@ if __name__ == "__main__":
     # Write result
     print('Writing result ...')
     reader.write_file(result, output_path+'corrected_text1')
-    reader.write_file(new_result, output_path+'corrected_text2_judged2')
+    reader.write_file(new_result, output_path+'corrected_text2')
 
     # Evaluation
     print('Evaluation ...')
