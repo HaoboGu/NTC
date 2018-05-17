@@ -180,7 +180,7 @@ def read_bigram_file(file_path):
     return bigram
 
 
-def ngrammodel(data_path, model_path, modern_corpus=False):
+def ngrammodel(data_path, model_path, split_strategy=TOKENIZER, modern_corpus=False):
     '''
     Given a data directory and output directory, generate files that store the count of unigrams and bigrams
     :param data_path: the directory of training data
@@ -198,7 +198,7 @@ def ngrammodel(data_path, model_path, modern_corpus=False):
         except Exception:
             # print(file)
             continue
-        count_appearance(contentlist, unigramdict, bigramdict, TOKENIZER)
+        count_appearance(contentlist, unigramdict, bigramdict, split_strategy)
 
     if modern_corpus:
         read_modern_corpus(data_path + modern_corpus, unigramdict, bigramdict)
@@ -229,14 +229,14 @@ def read_sentence_file(file_path):
     return content
 
 
-def get_possible_NE_list(file_list):
+def get_possible_NE_list(file_list, split_strategy=TOKENIZER):
     import src.file_io as reader
     NE_dict = {}
     for file in file_list:
         data = reader.read_file(file)
         data = reader.clean_empty_line(data)
         for line in data:
-            tokens = nltk.tokenize.word_tokenize(line)
+            tokens = splitstr(line, split_strategy)
             token_pos_list = nltk.pos_tag(tokens)
             for pair in token_pos_list:
                 word = pair[0]
