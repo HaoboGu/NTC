@@ -100,6 +100,8 @@ def count_appearance(content, ugram_dict, bgram_dict, split_strategy=TOKENIZER):
         items = splitstr(line, split_strategy)
         for item in items:
             ''' Count unigrams '''
+            if item == "":
+                continue
             item = item.lower()
             if item in ugram_dict:
                 ugram_dict[item] += 1
@@ -108,6 +110,8 @@ def count_appearance(content, ugram_dict, bgram_dict, split_strategy=TOKENIZER):
 
         for i in range(1, len(items)):
             ''' Count bigrams '''
+            if items[i] == "" or items[i-1] == "":
+                continue
             bg = (items[i-1].lower(), items[i].lower())
             if bg in bgram_dict:
                 bgram_dict[bg] += 1
@@ -201,20 +205,20 @@ def ngrammodel(data_path, model_path, split_strategy=TOKENIZER, modern_corpus=Fa
         count_appearance(contentlist, unigramdict, bigramdict, split_strategy)
 
     if modern_corpus:
-        read_modern_corpus(data_path + modern_corpus, unigramdict, bigramdict)
+        read_modern_corpus(data_path + modern_corpus, unigramdict, bigramdict, split_strategy)
 
     writefile(unigramdict, bigramdict, model_path)
     return
 
 
-def read_modern_corpus(data_path, unigram, bigram):
+def read_modern_corpus(data_path, unigram, bigram, split_strategy):
     files = os.listdir(data_path)
     for f in files:
         if operator.eq(f, ".DS_Store"):
             continue
         sentence_file_path = os.path.join(data_path, f)
         content = read_sentence_file(sentence_file_path)
-        count_appearance(content, unigram, bigram, TOKENIZER)
+        count_appearance(content, unigram, bigram, split_strategy)
 
 
 def read_sentence_file(file_path):

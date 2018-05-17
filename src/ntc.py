@@ -5,7 +5,7 @@ import os
 import re
 import string
 from operator import itemgetter
-
+import nltk
 
 def nth_repl(s, sub, repl, nth):
     """
@@ -150,7 +150,7 @@ class RuleBasedModel:
         :param text: str
         :return: str
         """
-        word_seq = text.split(' ')
+        word_seq = nltk.word_tokenize(text)
         for word in word_seq:
             word = re.sub('^\W+$', '', word)
             if word not in self.vocabulary and word.lower() not in self.vocabulary and word != ''\

@@ -19,7 +19,7 @@ if __name__ == "__main__":
     gold_text_file = "gold_standard/newberry-mary-b-some-further-accounts-of-the-nile-1912-1913/ESF_2.txt"
 
     all_raw_text_files, all_gold_standard_files = reader.get_all_evaluation_files()
-    possible_name_entity_dict = ng.get_possible_NE_list([data_path+raw_text_file], split_strategy=ng.WHITE_SPACE)
+    possible_name_entity_dict = ng.get_possible_NE_list([data_path+raw_text_file], split_strategy=ng.TOKENIZER)
     # Read data
     data = reader.read_file(data_path + raw_text_file)
     data = reader.clean_empty_line(data)
@@ -33,8 +33,8 @@ if __name__ == "__main__":
 
     # Statistical system
     print("Statistical ...")
-    ng.ngrammodel(data_path, model_path, split_strategy=ng.WHITE_SPACE, modern_corpus=True)
-    statistic_model = ng.read_ngram_model(model_path, split_strategy=ng.WHITE_SPACE,
+    ng.ngrammodel(data_path, model_path, split_strategy=ng.TOKENIZER, modern_corpus=True)
+    statistic_model = ng.read_ngram_model(model_path, split_strategy=ng.TOKENIZER,
                                           topN=50, delta=0.1, threshold=1.7, NE_list=possible_name_entity_dict)
     new_result = []
 
