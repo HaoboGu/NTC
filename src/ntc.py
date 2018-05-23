@@ -223,7 +223,7 @@ class RuleBasedModel:
         """
         word_seq = text.split(' ')
         for word in word_seq:
-            if word[0].islower():
+            if len(word) != 0 and word[0].islower():
                 text = text.replace(word, word.lower())
         return text
 
@@ -231,10 +231,11 @@ class RuleBasedModel:
         # main method to process noisy text
 
         # Apply rules first
-        text = self.merge_words(text)
-        text = self.remove_garbage_strings(text)
-        text = self.new_apply_char_rule(text)
-        text = self.correct_case(text)
+        if text:
+            text = self.merge_words(text)
+            text = self.remove_garbage_strings(text)
+            text = self.new_apply_char_rule(text)
+            text = self.correct_case(text)
         return text
 
 

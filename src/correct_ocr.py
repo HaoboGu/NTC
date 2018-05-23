@@ -38,7 +38,7 @@ if __name__ == "__main__":
             exit(0)
 
     all_raw_text_files, all_gold_standard_files = reader.get_all_evaluation_files()
-    possible_name_entity_dict = ng.get_possible_NE_list([input_filename], split_strategy=ng.TOKENIZER)
+    # possible_name_entity_dict = ng.get_possible_NE_list([input_filename], split_strategy=ng.TOKENIZER)
     # Read data
     data = reader.read_file(input_filename)
     data = reader.clean_empty_line(data)
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     print("Statistical ...")
     # ng.ngrammodel(data_path, model_path, split_strategy=ng.TOKENIZER, modern_corpus=True)
     statistic_model = ng.read_ngram_model(model_path, split_strategy=ng.TOKENIZER,
-                                          topN=50, delta=0.1, threshold=1.7, NE_list=possible_name_entity_dict)
+                                          topN=50, delta=0.1, threshold=1.7, NE_list={})
     new_result = []
 
     for line in result:
