@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Letter dated 12-06-1912 addressed to Mrs Chandler</title>
+                <author>
+                    <persName ref="#Winlock_Herbert">Herbert Winlock</persName>
+                </author>
+                <editor>
+                    <persName ref="#SLK">Dr. Sarah L. Ketchley</persName>
+                </editor>
+                <respStmt>
+                    <resp>EBA Interns</resp>
+                    <persName ref="#RR">Rachel Rodney</persName>
+                    <persName ref="#SM">Sesha Manchirau</persName>
+                    <persName ref="#CR">Connor Rafferty</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>The Emma B. Andrews Diary Project</publisher>
+                <address>
+                    <addrLine>University of Washington, Seattle WA 98195 U.S.A.</addrLine>
+                </address>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-nc/4.0/">This work is
+                        licensed under a Creative Commons Attribution-NonCommercial 4.0
+                        International License."></licence>
+                </availability>
+                <date when="2018"> 2011-2018 </date>
+                <distributor>The Emma B. Andrews Diary Project</distributor>
+            </publicationStmt>
+            <notesStmt>
+                <note>1912-08-17</note>
+            </notesStmt>
+            <sourceDesc>
+                <bibl>
+                    <title>Helen Winlock Archive</title>
+                    <author>
+                        <persName ref="#Winlock_Helen">Helen Winlock</persName>
+                    </author>
+                    <orgName ref="#APS">Massachussets Historical Society</orgName>
+                    <address>
+                        <addrLine>Boston,Massachussetts</addrLine>
+                    </address>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>
+                    <persName ref="#Andrews_Emma_B">Emma B. Andrews</persName> is best remembered
+                    for her association with the millionaire lawyer turned archaeologist/art and
+                    antiquities collector, <persName ref="#Davis_Theodore">Theodore M.
+                        Davis</persName>. Traveling to <placeName ref="#Egypt">Egypt</placeName>
+                    with him between 1889 and 1912, she kept detailed journals of these voyages
+                    along the <placeName ref="#Nile_River">Nile</placeName>, including his important
+                    yet under-reported excavations of 20 significant tombs in the <placeName
+                        ref="#Valley_of_the_Kings">Valley of the Kings</placeName>. <persName
+                            ref="#Andrews_Emma_B">Emma</persName> provides a vital commentary on the
+                    archaeology and pioneering Egyptologists of the time. She paints a revealing
+                    picture of the lives of the colonial gentry and the cultural and scientific
+                    literati in <placeName ref="#Egypt">Egypt</placeName> at the dawn of the
+                    twentieth century. To date, her diaries are unpublished; analysis of the
+                    contents of 19 volumes will afford scholars and a general audience information
+                    about an important historical resource for the first time. Since its inception
+                    in 2010, the scope of our project has broadened to include the transcription and
+                    digitization of a wide range of primary historical material from the 'Golden
+                    Age' of Egyptian archaeology detailed in the Research section of this website.
+                    The Emma B. Andrews Diary Project is one of the founding partners of Newbook
+                    Digital Texts. We are proud to offer undergraduate and graduate Digital
+                    Humanities education and internships.</p>
+            </projectDesc>
+        </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson>
+                    <person role="editor" sex="F">
+                        <persName ref="#SLK">Dr. Sarah L. Ketchley</persName>
+                        <affiliation>University of Washington</affiliation>
+                        <occupation>Affiliate Instructor</occupation>
+                        <listEvent>
+                            <event>
+                                <p>Project Director 2010-present</p>
+                            </event>
+                        </listEvent>
+                    </person>
+                    <!-- Repeat as necessary adding new team member -->
+                    
+                </listPerson>
+            </particDesc>
+        </profileDesc>
+        <revisionDesc>
+            <change when="2018-03-15" who="#SLK">
+                <p>#SLK updated TEI Header.</p>
+                <!-- Repeat as necessary, most recent at the top -->
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <p>We have roared at <persName ref="#Winlock_Ethel">Ethel</persName>s letters but we
+                deprecate the two children's tendencies towards unrestraint and turkey trotting
+                since <persName ref="#Winlock_Helen">Helen</persName>'s steadying influence has
+                gone</p>
+            <p><address rend="embossed">
+                    <addrLine>Telephone 4949 Mayfair</addrLine>
+                </address></p>
+            <p><address rend="embossed">
+                    <addrLine>52, Jermyn Street, S.W.</addrLine>
+                </address></p>
+            <p><date when="1912-06-12">XII 6 1912</date></p>
+            <p>We don't approve of turkey trotting but then maybe we are of a past generation - old
+                fogy married folks.</p>
+            <p>Dear<persName ref="#Chandler_Mrs"> Mrs. Chandler</persName></p>
+            <p>Well here we are in <placeName ref="#London">London</placeName> still on our
+                honeymoon. It's quite a story and I will have to go way back and take it up where
+                    <persName ref="#Winlock_Helen">Helen</persName> left off at <placeName
+                    ref="#Highclere">Highclere</placeName>. She's been trying to make me write for a
+                week now and and I've been putting it off for her to write and so several chapters
+                of our novel have come out without you getting the installments. First for the
+                illustrations. There are three of <persName ref="#Ermintrude_Lady">Lady
+                    Erminitrude</persName> and two of <persName ref="#Algy_Lord">Lord
+                    Algy</persName> at their cozy little shooting box down in <placeName
+                    ref="#Berkshire">Berks</placeName>. (In two the shooting box creeps into the
+                back ground). <persName ref="#Carnarvon_Lord">Lord Carnarvon</persName> took</p>
+            <pb n="2"/>
+            <p>one of <persName ref="#Ermintrude_Lady">Lady Erminitrude</persName> and <persName
+                    ref="#Algy_Lord">Lord Algy</persName> together and had it enlarged so big - two
+                feet by three - that it won't get into this envelope. He sent <persName
+                    ref="#Winlock_Helen">Helen</persName> a great big print yesterday with his name
+                down in the corner just like a professional photographer. When the Lords are
+                abolished he will be a success at his trade.</p>
+            <p>Well we left <placeName ref="#Highclere">Highclere</placeName> on a Monday morning
+                with <persName ref="#Johnny_Dr">Dr. Johnny</persName> - a name that sounds as
+                peculiarly flippant as the man who is tagged with it. But its only a disguise for
+                one of the best of the younger London surgeons. I believe <persName
+                    ref="#Winlock_Helen">Helen</persName> has mentioned him before. We got back here
+                to the rooms and had a joyful time unpacking. <persName ref="#Dexter_Mary">Mary
+                    Dexter</persName> had given us a rather footless lecture on the superiority of
+                English servants and we had a fine sample of it. The ploughboy and milk maid who
+                packed our bags had packed a great boot of mine in one of <persName
+                    ref="#Winlock_Helen">Helen</persName>'s silk slipper covers and jammed her
+                patent leather slippers loose among my shoes, and then with that for a starter they
+                had shown a diabolic ingenuity in keeping up their original</p>
+            <pb n="3"/>
+            <p>ideas of packing. We saw <persName ref="#Dexter_Mary">Mary Dexter</persName> next day
+                and told her.</p>
+            <p>During the next two days we kept up our [rounds] of showing off <persName
+                    ref="#Winlock_Helen">Helen</persName>'s swell dresses at the swellest places. We
+                had lunch with <persName ref="#Harcourt_Smith_Sir_Cecil">Sir Cecil</persName> and
+                    <persName ref="#Harcourt_Smith_Lady">Lady Harcourt-Smith</persName> in
+                    <placeName ref="#South_Kensington">South Kensington</placeName> and had tea at
+                the <orgName ref="#Lyceum_Club">Lyceum Club</orgName> with a great aunt of my
+                Sister <persName ref="#Helen_Sister">Helen</persName>'s. We bought saddles, our
+                boots were finished, <persName ref="#Winlock_Helen">Helen</persName> tried on her
+                riding habits, our wicker straw chairs and <persName ref="#Chandler_Ethel"
+                    >Ethel</persName>s lunch basket with the gold rimmed plates came from the Army +
+                Navy stores and finally we packed four heavy trunks with useless stuff and sent them
+                by long sea around to <placeName ref="#Marseilles">Marseilles</placeName>.</p>
+            <p><persName ref="#Winlock_Helen">Helen</persName> meanwhile had been feeling a bit out
+                of sorts. We laid it down at first to our last spree - dinner at the Berkley, the
+                theatre and supper at the <name type="hotel" ref="#Savoy">Savoy</name> but by
+                Thanksgiving day she was sort of miserable. I sent for <persName ref="#Johnny_Dr"
+                    >Dr. Johnny</persName> next day because I know him well. To cut it short she
+                probably got a chill at <placeName ref="#Highclere">Highclere</placeName> which
+                developped into <hi rend="underline">coli cystitis</hi>. That it seems is the way
+                doctors express having little worms with wriggly bodies and yellow eyes and gaping
+                mouths</p>
+            <pb n="4"/>
+            <p>that chew your bladder. <persName ref="#Johnny_Dr">Dr. Johnny</persName> has seen her
+                daily. We vetoed the idea of a trained nurse or a nursing home and he has taken us
+                under his charge and seen that everything is all right. The worst of its all over
+                and she's on the mend now so don't worry. We are taking every precaution and
+                    <persName ref="#Johnny_Dr">Dr. J</persName> is a notoriously cautious person and
+                I really don't think she can help bring well in a week. Meantime we have put off
+                sailing another two weeks. Fortunately I ran across a chance of purchasing a
+                collection of manuscripts for <persName ref="#Morgan_J_P">J.P.M.</persName> which
+                involves about <measure type="currency">$40,000</measure> and that I have had orders
+                from <placeName ref="#New_York">New York</placeName> to stay here for so <persName
+                    ref="#Winlock_Helen">Helen</persName>'s little flurry has nothing to do with our
+                being late to <placeName ref="#Egypt">Egypt</placeName>.</p>
+            <p>Now this you needn't read to the family. She's been a perfect dear, this wife of
+                mine. An illness like this on a honeymoon might be supposed to cast a gloom over
+                things but she is such a darling its just brought us closer together and we've had a
+                regular picnic out of it. She has been wonderfully good a patient just <persName
+                    ref="#Winlock_Helen">Helen</persName> in fact - and I think she is happy - I am
+                sure she is. With love <persName ref="#Winlock_Herbert">Herbert</persName>.</p>
+        </body>
+    </text>
+</TEI>

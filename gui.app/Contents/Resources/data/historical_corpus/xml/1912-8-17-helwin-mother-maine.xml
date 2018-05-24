@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Letter dated 08-17-1912 addressed to mother</title>
+            <author>
+               <persName ref="#Winlock_Helen">Helen Winlock</persName>
+            </author>
+            <editor>
+               <persName ref="#SLK">Dr. Sarah L. Ketchley</persName>
+            </editor>
+            <respStmt>
+               <resp>EBA Interns</resp>
+               <persName ref="#RR">Rachel Rodney</persName>
+               <persName ref="#SM">Sesha Manchirau</persName>
+               <persName ref="#CR">Connor Rafferty</persName>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>The Emma B. Andrews Diary Project</publisher>
+            <address>
+               <addrLine>University of Washington, Seattle WA 98195 U.S.A.</addrLine>
+            </address>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by-nc/4.0/">This work is
+                  licensed under a Creative Commons Attribution-NonCommercial 4.0
+                  International License."></licence>
+            </availability>
+            <date when="2018"> 2011-2018 </date>
+            <distributor>The Emma B. Andrews Diary Project</distributor>
+         </publicationStmt>
+         <notesStmt>
+            <note>1912-08-17</note>
+         </notesStmt>
+         <sourceDesc>
+            <bibl>
+               <title>Helen Winlock Archive</title>
+               <author>
+                  <persName ref="#Winlock_Helen">Helen Winlock</persName>
+               </author>
+               <orgName ref="#APS">Massachussets Historical Society</orgName>
+               <address>
+                  <addrLine>Boston,Massachussetts</addrLine>
+               </address>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>
+               <persName ref="#Andrews_Emma_B">Emma B. Andrews</persName> is best remembered
+               for her association with the millionaire lawyer turned archaeologist/art and
+               antiquities collector, <persName ref="#Davis_Theodore">Theodore M.
+                  Davis</persName>. Traveling to <placeName ref="#Egypt">Egypt</placeName>
+               with him between 1889 and 1912, she kept detailed journals of these voyages
+               along the <name type="river" ref="#Nile">Nile</name>, including his important
+               yet under-reported excavations of 20 significant tombs in the <placeName
+                  ref="#Valley_of_the_Kings">Valley of the Kings</placeName>. <persName
+                     ref="#Andrews_Emma_B">Emma</persName> provides a vital commentary on the
+               archaeology and pioneering Egyptologists of the time. She paints a revealing
+               picture of the lives of the colonial gentry and the cultural and scientific
+               literati in <placeName ref="#Egypt">Egypt</placeName> at the dawn of the
+               twentieth century. To date, her diaries are unpublished; analysis of the
+               contents of 19 volumes will afford scholars and a general audience information
+               about an important historical resource for the first time. Since its inception
+               in 2010, the scope of our project has broadened to include the transcription and
+               digitization of a wide range of primary historical material from the 'Golden
+               Age' of Egyptian archaeology detailed in the Research section of this website.
+               The Emma B. Andrews Diary Project is one of the founding partners of Newbook
+               Digital Texts. We are proud to offer undergraduate and graduate Digital
+               Humanities education and internships.</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <particDesc>
+            <listPerson>
+               <person role="editor" sex="F">
+                  <persName ref="#SLK">Dr. Sarah L. Ketchley</persName>
+                  <affiliation>University of Washington</affiliation>
+                  <occupation>Affiliate Instructor</occupation>
+                  <listEvent>
+                     <event>
+                        <p>Project Director 2010-present</p>
+                     </event>
+                  </listEvent>
+               </person>
+               <person role="intern" sex="F">
+                  <persName ref="#CS">Clare Summa</persName>
+                  <affiliation>University of Washington</affiliation>
+                  <occupation>Student Intern</occupation>
+                  <listEvent>
+                     <event>
+                        <p>Team member 2015-2016</p>
+                     </event>
+                  </listEvent>
+               </person>
+               <!-- Repeat as necessary adding new team member -->
+               
+            </listPerson>
+         </particDesc>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2018-03-14" who="#SLK">
+            <p>#SLK merged <name type="intern" ref="#CLS">Clare Summa</name>'s tagging.</p>
+            <!-- Repeat as necessary, most recent at the top -->
+         </change>
+      </revisionDesc>
+   </teiHeader>
+  <text>
+      <body>
+         <p><address rend="printed">
+            <addrLine>Pigeon Hill</addrLine>
+         </address></p>
+         <p><address rend="printed">
+            <addrLine>North Haven, Maine</addrLine>
+         </address></p>
+         <p>Dearest <persName ref="#Chandler_Mrs">mother</persName>.</p> 
+            <p>When I think what I have to tell
+            you it nearly makes me cry but I am 
+            so happy that I manage to refrain and 
+            get sort of hysterical in consequence. The 
+            point of it is that I am engaged to <persName ref="#Winlock_Herbert">Herbert</persName>
+            and there is no doubt about it that we 
+            each can make the other bubble with
+            delight. I hope you like him. I think 
+            he has changed a good deal in the 
+            last four years so he probably has 
+            a lot since he went to college </p> 
+         <pb n="2"/> 
+            <p>any way we seem to fit in together very 
+            handily and the sun shines every day 
+            even in cloudy weather. It makes me
+            feel benign and delighted with everything 
+            and please like him for my sake 
+            even if you don't for his. However
+            I have no reason to believe you dont 
+            except that mother said you had
+            picked out Paul who doubtless would 
+            have done as well had the spark 
+            been kindled but there's the rut. 
+            Any way I am contented so is <persName ref="#Winlock_Herbert">Herbert</persName>
+            which is the chief thing. Don't</p> 
+            <pb n="3"/> <!-- sideways -->
+            <p>tell any body till you see us as we have been waiting 
+            to have it all out with you first. But before I finish 
+            I must say that it changes everything from gloom 
+            to glamor and I am what is known as radiant 
+            and I love everybody and you one of the most. That is the hard part of it you
+            just coming back after so long a time away and I on the point of leaving 
+            but while we are together lets make the most of it. 
+            It will be the best thing possible to have you back 
+            again and the family are counting the moments.</p>
+         <pb n="4"/> 
+            <p>Its a big thing, what I am going to do 
+            and I hadn't got quite settled in
+            my mind about it yet except its the 
+            only thing for me.</p> 
+            <p>I am writing this at the Bruditchs. Mea sends her best. Mrs B. has had
+            the ceiling lowered in this room so as
+            not to offend your exquisite eyes for 
+            proportion and we all will be waiting on
+            the wharf to greet you. 1000 kisses 
+            from <persName ref="@#Winlock_Helen">Helen</persName> your lovingest sister.
+            
+               <date when="1912-08-17">Aug 17</date>.</p>
+      </body>
+  </text>
+</TEI>

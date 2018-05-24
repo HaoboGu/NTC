@@ -102,3 +102,8 @@ ENV/
 
 .idea/*
 idea/*
+
+# building app and exe
+./build
+./dist
+./setup.py
