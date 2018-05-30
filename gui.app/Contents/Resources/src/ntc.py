@@ -212,7 +212,7 @@ class RuleBasedModel:
                 merged_word = first_word + second_word
                 if merged_word.lower() in self.unigram or merged_word.lower() in self.vocabulary:
                     text = text.replace(first_word + ' ' + second_word, merged_word)
-                    print(first_word + ' ' + second_word, '->', merged_word)
+                    # print(first_word + ' ' + second_word, '->', merged_word)
         return text
 
     def correct_case(self, text):
