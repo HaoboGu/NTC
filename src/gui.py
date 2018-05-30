@@ -15,15 +15,15 @@ class GUI:
         self.master = master
         # Set widgets and layout
         self.correct_button = Button(root, width=10, text='correct', command=self.button_click)
-        self.correct_button.pack(anchor=CENTER)
+        # self.correct_button.pack(anchor=CENTER)
         self.correct_button.grid(row=1, column=2)
         self.input_text = Text(root, relief=GROOVE, height=20, width=60, borderwidth=2)
         self.input_text.insert(END, "Paste text here")
         self.master.bind_class("Text", "<Control-a>", self.select_all)  # rebind "select all" shortcut
-        self.input_text.pack(side=LEFT, padx=2, pady=2)
+        # self.input_text.pack(side=LEFT, padx=2, pady=2)
         self.input_text.grid(row=0, column=1, rowspan=3, padx=5, pady=5)
         self.output_text = Text(root, relief=GROOVE, height=20, width=60, borderwidth=2)
-        self.output_text.pack(side=RIGHT, padx=2, pady=2)
+        # self.output_text.pack(side=RIGHT, padx=2, pady=2)
         self.output_text.grid(row=0, column=3, rowspan=3, padx=5, pady=5)
         # Set correct model
         self.rbm = ntc.RuleBasedModel('ruleset')
