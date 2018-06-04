@@ -62,8 +62,8 @@ def writefile(unigram, bigram, path):
     '''
     if not os.path.exists(path):
         os.mkdir(path)
-    uni_file = open(os.path.join(path, "unigram"), 'w')
-    bi_file = open(os.path.join(path, "bigram"), 'w')
+    uni_file = open(os.path.join(path, "unigram"), 'w', encoding='utf-8')
+    bi_file = open(os.path.join(path, "bigram"), 'w', encoding='utf-8')
 
     for item, value in unigram.items():
         uni_file.write(item + "\t" + str(value) + "\n")
@@ -236,7 +236,7 @@ def read_modern_corpus(data_path, unigram, bigram, split_strategy):
 
 def read_sentence_file(file_path):
     content = []
-    lines = open(file_path, 'r').readlines()
+    lines = open(file_path, 'r', encoding='utf-8').readlines()
     for line in lines:
         line = line.strip()
         if re.match("\\s+", line):
