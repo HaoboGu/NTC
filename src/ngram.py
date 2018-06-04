@@ -136,6 +136,17 @@ def splitstr(line, split_strategy):
 
 
 def read_ngram_model(model_path, split_strategy, topN, delta, threshold, NE_list={}):
+    '''
+    Read the n-gram model files under 'model' directory
+    :param model_path: path of 'model' directory
+    :param split_strategy: the way of split tokens
+    :param topN: set the number of candidates before maximizing the probability of the sentnence
+    :param delta: the value of delta used to smooth n-gram model
+    :param threshold: the vaule of threshold in selecting candidate, Edit Distance that smaller than this threshold will
+    be considered as a potential candidate.
+    :param NE_list: list of probable name entity
+    :return: a n-gram model
+    '''
     unigram_path = os.path.join(model_path, "unigram")
     bigram_path = os.path.join(model_path, "bigram")
     unigram, max_length = read_unigram_file(unigram_path)
@@ -188,7 +199,9 @@ def ngrammodel(data_path, model_path, split_strategy=TOKENIZER, modern_corpus=Fa
     '''
     Given a data directory and output directory, generate files that store the count of unigrams and bigrams
     :param data_path: the directory of training data
-    :param output_path: the directory to store counting data
+    :param model_path: the directory to store n-gram data
+    :param split_strategy: the way to split tokens
+    :param modern_corpus: True if you want to include data under 'other_corpus' directory
     '''
     history_corpus = "historical_corpus/"
     modern_corpus = "other_corpus/"
@@ -327,6 +340,15 @@ def modify_line(statistic_model, input_line):
 
 
 def need_modify(err_word, unigram, name_entity_dict, threshold):
+    '''
+    Check if the word needs to be modified
+    :param err_word: the potential error word
+    :param unigram: dictionary of the vocabulary set
+    :param name_entity_dict: dictionary of probable name entity
+    :param threshold: the threshold used to judge whether to modify the probable name entity (won't be modified if the
+    time of appearances bigger than the threshold)
+    :return: Return flase if the word it self or its singular format (tagged by nltk pos tagger) is in the vocabulary
+    '''
     if err_word in unigram:
         return False
     if err_word in name_entity_dict and name_entity_dict[err_word] > threshold:
