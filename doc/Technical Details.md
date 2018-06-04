@@ -1,4 +1,4 @@
-# Technical document for NTC
+# Technical documentation for NTC
 
 This document contains technical details of OCR post-correction system NTC. This document is developed for the people who want to know the implementation details or do future developments based on this project. 
 
@@ -62,15 +62,32 @@ Statistical correction module is implemented in `src/ngram.py	`. The main idea o
 
 The main procedure of statistical correction is:
 
-1. Calculate edit distances between each word in vocabulary and the wrong word
-2. Choose top 50 similar words using edit distance as candidates
-3. Choose the best word which gives the maximum probability of the sentence in 2-gram language model. 
+1. Words that don't appear in vocabulary or training corpus will be considered a 'wrong' word;
+2. Calculate the Edit Distances between the 'wrong' word and words in vocabulary (training corpus) whose length is no more larger or smaller 1 than the length of the 'wrong' word;
+3. Choose top 50 similar words with lowest Edit Distance as the candidates, and the 'wrong' word itself will also be taken into count;
+4. Choose the best word which gives the maximum probability of the sentence in bigram language model. 
+
+### Training Corpus
+
+The training corpus is under `./data/` directory. If you want to train the model on you own corpus, you can to delete all files under `historical_corpus` and `other_corpus` directory and move your files under `other_corpus` folder (we recommend you to backup all files). Then train the model using the following code in command line:
+
+```shell
+python3 src/train.py
+```
+
+You can also add the following code into your script to train the model:
+
+```python
+ngram.ngrammodel(data_path, model_path, split_strategy=ngram.TOKENIZER, modern_corpus=False)
+```
+
+After training, two files will be created under `./model/` which store the data for n-gram model. Our program will read the trained model files, so you only need to train the model once on your corpus. 
 
 ### N-gram model
 
 Class `ngram_model` stores parameters used in ngram model
 
-### Edit distance
+### Edit Distance
 
 A modified version of Levenshtein distance is used to measure the similarity between words. You can use `wf_levenshtein(word1, word2)` to calculate Levenshtein distance. 
 
@@ -100,7 +117,17 @@ Test data and gold standard are stored in `data` folder. In `data` folder, raw O
 
 We use built-in package `Tkinter` to create GUI for our system. Here is a tutorial of `Tkinter`: https://www.python-course.eu/python_tkinter.php
 
+## Generate executable files
 
+### Mac OS
+
+We use `py2app` package to generate our `gui.app` file. We recommend you to use the 0.13 version, because there are some bugs in the latest version (0.14). File `setup.py` is the setup script we used for generating `gui.app`. 
+
+For more information about `py2app`, please visit [here](http://py2app.readthedocs.io/en/latest/).
+
+### Windows
+
+We use `PyInstaller` to generate  `gui.exe` file for Windows users. For more information about `PyInstaller`, please visit [here](https://www.pyinstaller.org).
 
 
 
